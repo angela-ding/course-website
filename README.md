@@ -1,3 +1,3 @@
 # assignment3
 
-Access the website here: https://angela-ding.github.io/course-website/templates
+Access the website here: https://angela-ding.github.io/course-website/app.py
