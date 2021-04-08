@@ -1,3 +1,4 @@
-# assignment3
+# Course Website
 
-Access the website here: http://angding.pythonanywhere.com/
+This site is deployed at: http://angding.pythonanywhere.com/
+
