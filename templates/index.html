@@ -1,0 +1,327 @@
+<!--Home Page-->
+<!DOCTYPE HTML>
+
+<html>
+
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>CSCB63: Design and Analysis of Data Structures, Winter 2021</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="../static/index.css" type="text/css">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<!--Body-->
+
+<body>
+    <!--Top Navigation Bar-->
+    <div class="topnav">
+        <a class="active" href="#top">Home</a>
+        <a href="https://piazza.com/class/kju7e2uwa8p3sf">Piazza</a>
+        <a href="https://markus.utsc.utoronto.ca/cscb63w21/">MarkUs</a>
+        <a href="lectures">Lectures</a>
+        <a href="tutorials">Tutorials</a>
+        <a href="assignments">Assignments</a>
+        <a href="tests">Tests</a>
+        <a href="feedback_redirect">Anonymous Feedback</a>
+        <a href="grade_redirect">Marks</a>
+        {% if session['sori'] == 'i' %}
+        <a href="allremarkrequests">Remark Requests</a>
+        {% endif %}
+        <a href="logout">Log Out</a>
+    </div>
+
+    <!--Title (Course code and course name)-->
+    <div id="main-content">
+        <div class="center">
+            <div id="title-container">
+                <h1 id="home-title" class="title">CSCB63</h1>
+                <h1 id="home-1-title" class="title">Design and Analysis of Data Structures</h1>
+            </div>
+            <hr>
+
+            <!--Instructor Info-->
+            <div class="center-1">
+                <div class="info">
+                    <h3>Instructor</h3>
+                    <!--Instructor Name-->
+                    <p>
+                        <span class="strong"><b>Dr. Anna Bretscher</b></span>
+                    </p>
+                    <!--Instructor Email-->
+                    <p>
+                        <span class="strong"><b>Email: </b></span>
+                        <a href="mailto: anna.bretscher@utoronto.ca">
+                            anna.bretscher@utoronto.ca
+                        </a>
+                    </p>
+                    <!--Instructor Office-->
+                    <p>
+                        <span class="strong"><b>Office: </b></span>
+                        IC 493
+                    </p>
+                </div>
+            </div>
+
+            <!--TA Info-->
+            <div class="center-1">
+                <div class="info">
+                    <h3>TAs</h3>
+                    <!--First TA-->
+                    <p>
+                        <span class="strong"><b>John Smith</b></span>
+                    </p>
+                    <p>
+                        <span class="strong">Email: </span>
+                        <a href="mailto: anna.bretscher@utoronto.ca">
+                            john.smith@mail.utoronto.ca
+                        </a>
+                    </p>
+                    <!--Second TA-->
+                    <p>
+                        <span class="strong"><b>Jane Smith</b></span>
+                    </p>
+                    <p>
+                        <span class="strong">Email: </span>
+                        <a href="mailto: anna.bretscher@utoronto.ca">
+                            jane.smith@mail.utoronto.ca
+                        </a>
+                    </p>
+                    <!--Third TA-->
+                    <p>
+                        <span class="strong"><b>Jake Smith</b></span>
+                    </p>
+                    <p>
+                        <span class="strong">Email: </span>
+                        <a href="mailto: anna.bretscher@utoronto.ca">
+                            jake.smith@mail.utoronto.ca
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!--Lecture Timetable-->
+            <div class="center-1">
+                <div class="info">
+                    <h3>Lectures</h3>
+                    <p>
+                        <b>Wednesdays</b> 3 - 4
+                        <!--Link to Zoom-->
+                        <a href="https://utoronto.zoom.us/j/89553548645"> (Zoom Link)</a>
+                    </p>
+                    <p>
+                        <b>Thursdays</b> 9 - 11
+                        <!--Link to Zoom-->
+                        <a href="https://utoronto.zoom.us/j/83378932991"> (Zoom Link)</a>
+                    </p>
+                </div>
+            </div>
+
+            <!--Office Hours Timetable-->
+            <div class="center-1">
+                <div class="info">
+                    <h3>Office Hours</h3>
+                    <p>
+                        <b>Mondays</b> 11 - 12:30
+                    </p>
+                    <p>
+                        <b>Fridays</b> 10:40 - 11:30
+                    </p>
+                    <p>
+                        Please see calendar for weekly changes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Course Description -->
+        <div class="center-1">
+            <div class="info">
+                <h3>Course Description</h3>
+                <p>
+                    Design, analysis, implementation and comparison of efficient data structures for common abstract
+                    data types. Priority queues: heaps and mergeable heaps. Dictionaries: balanced binary search
+                    trees, B-trees, hashing. Amortization: data structures for managing dynamic tables and disjoint
+                    sets. Data structures for representing graphs. Graph searches.
+                </p>
+                <!--Exclusions-->
+                <p>
+                    Exclusion: CSC263H, CSC265H, (CSCC78H)
+                </p>
+                <!--Prerequisites-->
+                <P>
+                    Prerequisite: CSCB36H or (CSCB38H) & [CGPA 2.75 or enrolment in a CSC subject POSt]
+                </P>
+                <!--Syllabus Link-->
+                <a href="../static/syllabus.pdf">Syllabus</a>
+            </div>
+        </div>
+
+        <!--Marking Scheme-->
+        <div class="center-1">
+            <div class="info">
+                <h3>Marking Scheme</h3>
+                <div class='table-container'>
+                    <!--Row 1-->
+                    <div class='row'>
+                        <!--Column 1-->
+                        <div class='column medium'>
+                            <div class='header-column left-top'>
+                                <b>Title</b>
+                            </div>
+                        </div>
+                        <!--Column 2-->
+                        <div class='column little'>
+                            <div class='header-column top'>
+                                <b>Weight</b>
+                            </div>
+                        </div>
+                        <!--Column 3-->
+                        <div class='column'>
+                            <div class='header-column right-top'>
+                                <b>Notes</b>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Row 2-->
+                    <div class='row 2'>
+                        <!--Column 1-->
+                        <div class='column medium'>
+                            <div class='r-column left'>
+                                Assignments
+                            </div>
+                        </div>
+                        <!--Column 2-->
+                        <div class='column little'>
+                            <div class='r-column middle'>
+                                30%
+                            </div>
+                        </div>
+                        <!--Column 3-->
+                        <div class='column'>
+                            <div class='r-column right'>
+                                3 assignments, 10% each
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Row 3-->
+                    <div class='row 3'>
+                        <!--Column 1-->
+                        <div class='column medium'>
+                            <div class='r-column left'>
+                                Tests
+                            </div>
+                        </div>
+                        <!--Column 2-->
+                        <div class='column little'>
+                            <div class='r-column middle'>
+                                30%
+                            </div>
+                        </div>
+                        <!--Column 3-->
+                        <div class='column'>
+                            <div class='r-column right'>
+                                3 tests, 10% each
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Row 4-->
+                    <div class='row 4'>
+                        <!--Column 1-->
+                        <div class='column medium'>
+                            <div class='r-column left'>
+                                Final Exam
+                            </div>
+                        </div>
+                        <!--Column 2-->
+                        <div class='column little'>
+                            <div class='r-column middle'>
+                                40%
+                            </div>
+                        </div>
+                        <!--Column 3-->
+                        <div class='column'>
+                            <div class='r-column right'>
+                                To pass the course, you must get at least 40% on the final exam.
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Row 5-->
+                    <div class='row 5'>
+                        <!--Column 1-->
+                        <div class='column medium'>
+                            <div class='r-column left-bottom'>
+                                Total
+                            </div>
+                        </div>
+                        <!--Column 2-->
+                        <div class='column little'>
+                            <div class='r-column bottom'>
+                                100%
+                            </div>
+                        </div>
+                        <!--Column 3-->
+                        <div class='column'>
+                            <div class='r-column right-bottom'>
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!--Calendar-->
+            <div class="center-2">
+                <div class="info">
+                    <h3>Calendar</h3>
+                    <iframe
+                       
+                        src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%233f51b5&amp;ctz=America%2FToronto&amp;src=dGYzcXZmdGU5ZHRuaXVxdmpoOHZ0NmIxZ2tAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=0&amp;showTz=0"
+        
+                        style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <footer id="main-footer">
+                <p class="blurb">
+                    <!--Instructor Info-->
+                    <b>Dr. Anna Bretscher</b>: <a class="flink" href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+                </p>
+                <p class="blurb-">
+                    <!--TA 1 Info-->
+                    <b>TA John Smith</b>: <a class="flink" href="mailto: anna.bretscher@utoronto.ca">john.smith@mail.utoronto.ca</a>
+                </p>
+                <p class="blurb-">
+                    <!--TA 2 Info-->
+                    <b>TA Jane Smith</b>: <a class="flink" href="mailto: anna.bretscher@utoronto.ca">jane.smith@mail.utoronto.ca</a>
+                </p>
+                <p class="blurb-">
+                    <!--TA 3 Info-->
+                    <b>TA Jake Smith</b>: <a class="flink" href="mailto: anna.bretscher@utoronto.ca">jake.smith@mail.utoronto.ca</a>
+                </p>
+                <p class="blurb-1">
+                    <!--Link to UofT Computer Science Faculty-->
+                    <a class="flink" href="https://web.cs.toronto.edu/" target="blank_">Department of Computer Science at UofT</a>
+                </p>
+                <!--Blurb about who designed the website-->
+                <p class="blurb-2">Site designed by Angela Ding, Ayazhan Bauyrzhankyzy, & Yihao Song.</p>
+            </footer>
+</body>
+
+</html>

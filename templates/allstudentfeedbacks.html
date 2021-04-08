@@ -1,0 +1,101 @@
+<!--Marks Page-->
+<!DOCTYPE HTML>
+
+<html>
+
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>Marks</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="../static/index.css" type="text/css">
+    <link rel="stylesheet" href="../static/changegrade.css" rel="stylesheet">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<!--Body-->
+
+<body>
+    <!--Top Navigation Bar-->
+    <div class="topnav">
+        <a href="home">Home</a>
+        <a href="https://piazza.com/class/kju7e2uwa8p3sf">Piazza</a>
+        <a href="https://markus.utsc.utoronto.ca/cscb63w21/">MarkUs</a>
+        <a href="lectures">Lectures</a>
+        <a href="tutorials">Tutorials</a>
+        <a href="assignments">Assignments</a>
+        <a href="tests">Tests</a>
+        <a class="active" href="#top">Anonymous Feedback</a>
+        <a href="grade_redirect">Marks</a>
+        {% if session['sori'] == 'i' %}
+        <a href="allremarkrequests">Remark Requests</a>
+        {% endif %}
+        <a href="logout">Log Out</a>
+    </div>
+
+    <!--Title (Page name and description)-->
+    <div id="main-content">
+        <div id="title-container">
+            <h1 id="home" class="title">Student Feedbacks for {{instructor_name}}</h1>
+        </div>
+        <hr id="other">
+    </div>
+
+    {% for key in questions.keys() %}
+    <div class="center-1">
+        <div class="info">
+                <h3>{{questions[key][0]}}</h3>
+                {% for response in responses[key] %}
+                    {% if (not ((response == None) or (response == ""))): %}
+                        <div class="block-content">
+                            <p>{{response}}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+
+    <!--Footer-->
+    <footer id="main-footer">
+        <p class="blurb">
+            <!--Instructor Info-->
+            <b>Dr. Anna Bretscher</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 1 Info-->
+            <b>TA John Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">john.smith@mail.utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 2 Info-->
+            <b>TA Jane Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">jane.smith@mail.utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 3 Info-->
+            <b>TA Jake Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">jake.smith@mail.utoronto.ca</a>
+        </p>
+        <p class="blurb-1">
+            <!--Link to UofT Computer Science Faculty-->
+            <a class="flink" href="https://web.cs.toronto.edu/" target="blank_">Department of Computer Science at
+                UofT</a>
+        </p>
+        <!--Blurb about who designed the website-->
+        <p class="blurb-2">Site designed by Angela Ding, Ayazhan Bauyrzhankyzy, & Yihao Song.</p>
+    </footer>
+</body>

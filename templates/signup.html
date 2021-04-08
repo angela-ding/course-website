@@ -1,0 +1,84 @@
+<!--Sign Up Page-->
+<!DOCTYPE HTML>
+
+<html>
+
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>CSCB63 Sign Up</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="../static/signup.css" type="text/css">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {% block error %}{% endblock %}
+
+    
+
+    <form method="POST" class="signup-form" id="sign_up_form" name="sign_up">
+        {% if emailInDB %}
+        <div class="error">
+            <p id="error_text">User with this email already exists. <br> Please <a href="login">login</a> or use a different email</p>
+        </div>
+        {% endif %}
+        {% if userTaken %}
+        <div class="error">
+            <p id="error_text">Username is taken! <br> Please choose a different username</p>
+        </div>
+        {% endif %}
+        {% if soriWrong %}
+        <div class="error">
+            <p id="error_text">Incorrect input in User Type! <br> Please enter student or instructor</p>
+        </div>
+        {%endif%}
+
+        <h3>CSCB63 <br>Sign Up</h3>
+
+        <div id="firstname">
+            <label>First Name<div id="first_name_error"></div></label>
+            <input type="text" name="firstName" placeholder="Enter your first name here">
+        </div>
+        <div id="lastname">
+            <label>Last Name<div id="last_name_error"></div></label>
+            <input type="text" name="lastName" placeholder="Enter your last name here">
+        </div>
+        <div id="username">
+            <label>Username<div id="username_error"></div></label>
+            <input type="text" name="username" placeholder="Enter your username here">
+        </div>
+        <div id="password">
+            <label>Password<div id="password_error"></div></label>
+            <input type="text" name="password" placeholder="Enter your password here">
+        </div>
+        <div id="email">
+            <label>Email<div id="email_error"></div></label>
+            <input type="text" name="email" placeholder="Enter your email here">
+        </div>
+        <div id="user_type">
+            <label>User Type<div id="user_type_error"></div></label>
+            <input type="text" name="sori" placeholder="Enter your user type here (student or instructor)">
+        </div>
+        <div id="buttons">
+            <p><input type="submit" value="Sign up"></p>
+            <div class="lastdiv">
+                <label><h4>Already have an account?</h4></label>
+                <button id="login" class="login_button"><a href="login">Log in</a></button>
+            </div>
+            
+        </div>
+    </form>
+    <script src="../static/scripts/signup.js"></script>
+</body>
+</html>

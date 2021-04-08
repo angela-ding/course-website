@@ -1,0 +1,109 @@
+<!--evaluation Page-->
+<!DOCTYPE HTML>
+
+<html>
+
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>CSCB63 Evaluations</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="../static/index.css" type="text/css">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<!--Body-->
+
+<body>
+    <!--Top Navigation Bar-->
+    <div class="topnav">
+        <a href="home">Home</a>
+        <a href="https://piazza.com/class/kju7e2uwa8p3sf">Piazza</a>
+        <a href="https://markus.utsc.utoronto.ca/cscb63w21/">MarkUs</a>
+        <a href="lectures">Lectures</a>
+        <a href="tutorials">Tutorials</a>
+        <a href="assignments">Assignments</a>
+        <a href="tests">Tests</a>
+        <a href="feedback_redirect">Anonymous Feedback</a>
+        <a class="active" href="#top">Marks</a>
+        {% if session['sori'] == 'i' %}
+        <a href="allremarkrequests">Remark Requests</a>
+        {% endif %}
+        <a href="logout">Log Out</a>
+    </div>
+
+    <!--Title (Page name and description)-->
+    <div id="main-content">
+        <div id="title-container">
+            <!--Submitting remark request(right aligned)-->
+            <button class="button" id="remark-request">
+                <a href="remark-request" id='remark-request-link'>Request Remark</a>
+            </button>
+            <h1 id="home" class="title">Evaluations</h1>
+            <p id="home-1">Your mark for assignment, labs, and exams.</p>
+        </div>
+        <hr id="other">
+    </div>
+
+    <div class='table-container'>
+        <div class='row'>
+            {% for item in table_headers %}
+            <div class='column little'>
+                <div class='header-column'>
+                    <b>{{item}}</b>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for key in dic.keys() %}
+            <div class='column little'>
+                <div class='r-column' id="{{key}} {{student_user}}">
+                    {{dic[key]}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer id="main-footer">
+        <p class="blurb">
+            <!--Instructor Info-->
+            <b>Dr. Anna Bretscher</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 1 Info-->
+            <b>TA John Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 2 Info-->
+            <b>TA Jane Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+        </p>
+        <p class="blurb-">
+            <!--TA 3 Info-->
+            <b>TA Jake Smith</b>: <a class="flink"
+                href="mailto: anna.bretscher@utoronto.ca">anna.bretscher@utoronto.ca</a>
+        </p>
+        <p class="blurb-1">
+            <!--Link to UofT Computer Science Faculty-->
+            <a class="flink" href="https://web.cs.toronto.edu/" target="blank_">Department of Computer Science at
+                UofT</a>
+        </p>
+        <!--Blurb about who designed the website-->
+        <p class="blurb-2">Site designed by Angela Ding, Ayazhan Bauyrzhankyzy, & Yihao Song.</p>
+    </footer>
+</body>

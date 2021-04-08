@@ -1,0 +1,60 @@
+<!--Feedback Page-->
+<!DOCTYPE HTML>
+
+<html>
+
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>CSCB63</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="../static/login.css" type="text/css">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form action="login" method="POST" class="login-form" id="login_form">
+
+        <div class="box" id="box_border">
+            {% if wrongUser %}
+            <div class="error">
+                <p id="error_text">Wrong username or password!</p>
+            </div>
+            {% endif %}
+            <h3>Log in</h3>
+
+            <div id="username">
+                <label>Username<div id="username_error"></div></label>
+                <input type="text" name="username" placeholder="Enter Username">
+            </div>
+
+            <div id="password">
+                <label>Password<div id="password_error">{% block password_error %}{% endblock %}</div></label>
+                <input type="password" name="password" placeholder="Enter Password">
+            </div>
+
+            <div id="buttons">
+                <p><input type="submit" class="login" value="Login"></p>
+                <br>
+                <div class="signup">
+                    <label><h4>New to CSCB63?</h4></label>
+                    <p><input type="button" id="signup" value="Sign up"></p>
+                </div>
+                
+            </div>
+        </div>
+        
+    </form>
+    <script src="../static/scripts/login.js"></script>
+</body>
+</html>
